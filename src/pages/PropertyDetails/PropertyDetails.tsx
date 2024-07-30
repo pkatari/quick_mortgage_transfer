@@ -22,6 +22,7 @@ export const PropertyDetails = () => {
       : 0
   );
   const [isSendQuote, setIsSendQuote] = useState<boolean>(false);
+  const [isInterestClick, setIsInterestClick] = useState(false);
   const [isStatusChanged, setIsStatusChanged] = useState<boolean>(false);
   const [loanAmount, setLoanAmount] = useState<number>(outstandingBalance);
   const [quoteMessage, setQuoteMessage] = useState<string>(
@@ -29,11 +30,16 @@ export const PropertyDetails = () => {
   );
   const sendQuotation = () => {
     timerRef.current = setTimeout(() => {
-      setQuoteMessage("Congratulations lender has accepted your deal.");
+      setQuoteMessage("Congratulations lender has accepted your quotation.");
       setIsStatusChanged(true);
-    }, 6000);
+    }, 3000);
     setIsSendQuote(true);
   };
+
+  const onInterestClick = () => {
+    setIsInterestClick(true);
+  }
+
   const calulateMonthlyEmi = () => {
     const monthlyInterestRate =
       imageCarouselData && imageCarouselData.newInterestRate
@@ -62,7 +68,7 @@ export const PropertyDetails = () => {
           <div className="info">
             <div className="top">
               <div className="post">
-                <h1>{imageCarouselData?.title}</h1>
+                <h1 style={{color:"#5a287d"}}>{imageCarouselData?.title}</h1>
                 <div className="address">
                   <span>{imageCarouselData?.address}</span>
                 </div>
@@ -75,7 +81,7 @@ export const PropertyDetails = () => {
               </div>
             </div>
             <div className="bottom">
-              <h3>About this Property</h3>
+              <h3 style={{color:"#5a287d"}}>About this Property</h3>
               <div>{imageCarouselData?.description}</div>
             </div>
           </div>
@@ -85,7 +91,7 @@ export const PropertyDetails = () => {
         <div className="wrapper">
           {imageCarouselData?.isMortgage ? (
             <>
-              <p className="title">Offer Applicable</p>
+              <h1 className="title">Offer Applicable</h1>
               <div className="feature">
                 <div className="featureText">
                   Congrats you and seller both are Natwest Customers and are eligible for Quick Mortgage transfer.
@@ -93,9 +99,9 @@ export const PropertyDetails = () => {
               </div>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <div className="listVertical">
-                  <div style={{ fontSize: "20px", fontWeight: 600 }}>
+                  <h2 style={{ fontSize: "20px", fontWeight: 600,color:"#5a287d" }}>
                     Seller Mortgage Details
-                  </div>
+                  </h2>
                   <div>
                     <div style={{ fontSize: "18px" }}>
                       Outstanding Loan Amount
@@ -134,9 +140,9 @@ export const PropertyDetails = () => {
                 </div>
 
                 <div className="listVertical">
-                  <div style={{ fontSize: "20px", fontWeight: 600 }}>
+                  <h2 style={{ fontSize: "20px", fontWeight: 600,color:"#5a287d" }}>
                     New Mortgage Quotation
-                  </div>
+                  </h2>
                   <div
                     style={{
                       display: "flex",
@@ -213,11 +219,11 @@ export const PropertyDetails = () => {
                 </div>
               </div>
               <div className="buttons">
-                <button disabled={isSendQuote} onClick={sendQuotation}>
+                <button disabled={isSendQuote || !isInterestClick} onClick={sendQuotation}>
                   Ask for Seller consent
                 </button>
                 <button>Seller Contact</button>
-                <button disabled={isSendQuote}>Buy</button>
+                <button disabled={isSendQuote} onClick={onInterestClick}>Interested</button>
               </div>
               {isSendQuote ? (
                 <div style={{ color: "red", fontSize: "18px" }}>
@@ -226,7 +232,7 @@ export const PropertyDetails = () => {
               ) : null}
               {isStatusChanged ? (
                 <button style={{ width: "300px" }} onClick={transferMortgage}>
-                  Proceed to transfer Mortgage{" "}
+                  Proceed to transfer Mortgage
                 </button>
               ) : null}
             </>

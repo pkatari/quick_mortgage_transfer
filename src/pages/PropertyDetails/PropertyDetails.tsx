@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ImageCarousel } from "../../components/ImageCarousel/ImageCarousel";
 import { listCarousel } from "../../mockData/mockData";
+import {useAffordability} from "../../hooks/useAffordability";
 import "./PropertyDetails.scss";
 
 export const PropertyDetails = () => {
@@ -25,10 +26,22 @@ export const PropertyDetails = () => {
   const [isInterestClick, setIsInterestClick] = useState(false);
   const [isStatusChanged, setIsStatusChanged] = useState<boolean>(false);
   const [loanAmount, setLoanAmount] = useState<number>(outstandingBalance);
+  const [isDecision,setIsDecision] = useState<boolean>(true);
   const [quoteMessage, setQuoteMessage] = useState<string>(
     "Quotation has been sent to Seller for review."
   );
+  const { mutate: getAffordability } = useAffordability({
+    onSuccess: (data: any) => {
+      setIsDecision(data.decision);
+    },
+  });
   const sendQuotation = () => {
+    getAffordability({
+      "amount": loanAmount,
+      "interestRate": imageCarouselData && imageCarouselData.newInterestRate ? +imageCarouselData.newInterestRate : 0,
+      "numberOfMonths": termPeriod * 12,
+      "type": "NORMAL" 
+    });
     timerRef.current = setTimeout(() => {
       setQuoteMessage("Congratulations Seller has accepted your quotation.");
       setIsStatusChanged(true);
@@ -158,6 +171,7 @@ export const PropertyDetails = () => {
                       required
                       id="loanAmount"
                       name="loanAmount"
+                      readOnly={isSendQuote}
                       className="mortgageForm"
                     />
                   </div>
@@ -195,6 +209,7 @@ export const PropertyDetails = () => {
                       required
                       id="termLengthNew"
                       name="termLengthNew"
+                      readOnly={isSendQuote}
                       className="mortgageForm"
                     />
                   </div>
@@ -219,7 +234,7 @@ export const PropertyDetails = () => {
                 </div>
               </div>
               <div className="buttons">
-                <button disabled={isSendQuote || !isInterestClick} onClick={sendQuotation}>
+                <button disabled={isSendQuote || !isInterestClick || !isDecision} onClick={sendQuotation}>
                   Ask for Seller consent
                 </button>
                 <button>Seller Contact</button>

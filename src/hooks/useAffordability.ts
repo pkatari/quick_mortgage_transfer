@@ -1,10 +1,11 @@
 import {useMutation} from "@tanstack/react-query";
 import { getAffordability } from "../services/affordability";
 
-export const useAffordability = () => {
+export const useAffordability = (options={}) => {
     const mutation = useMutation({
-     mutationFn: async () => {
-           const response =  await getAffordability();
+        ...options,
+       mutationFn: async (payload:any) => {
+           const response =  await getAffordability(payload);
            return response.data;
         }
     });

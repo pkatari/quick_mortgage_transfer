@@ -50,6 +50,7 @@ export const MainLayout = () => {
   const { mutate: getExchangeCode } = useExchangeCode({
     onSuccess: (data: any) => {
       setAccessToken(data.access_token);
+      window.sessionStorage.setItem("accessToken",data.access_token);
       setIsEnabledCustomer(true);
     },
   });

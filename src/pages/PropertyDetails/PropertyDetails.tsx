@@ -121,7 +121,7 @@ export const PropertyDetails = () => {
                     </div>
                     <span
                       style={{
-                        backgroundColor: "rgba(254, 205, 81, 0.438)",
+                        backgroundColor: "whitesmoke",
                         borderRadius: "5px",
                       }}
                     >
@@ -132,7 +132,7 @@ export const PropertyDetails = () => {
                     <div style={{ fontSize: "18px" }}>Interest Rate (%)</div>
                     <span
                       style={{
-                        backgroundColor: "rgba(254, 205, 81, 0.438)",
+                        backgroundColor: "whitesmoke",
                         borderRadius: "5px",
                       }}
                     >
@@ -143,7 +143,7 @@ export const PropertyDetails = () => {
                     <div style={{ fontSize: "18px" }}>Term Length (Yrs)</div>
                     <span
                       style={{
-                        backgroundColor: "rgba(254, 205, 81, 0.438)",
+                        backgroundColor: "whitesmoke",
                         borderRadius: "5px",
                       }}
                     >

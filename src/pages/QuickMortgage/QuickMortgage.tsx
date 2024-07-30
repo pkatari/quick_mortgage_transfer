@@ -4,55 +4,44 @@ export const QuickMortgage = () => {
   return (
     <div className="quickMortgage">
       <div className="transferContainer">
-        <p>
-          <h3 style={{ textAlign: "center", marginBottom: "1rem" }}>
-            <b>Mortgage Loan Transfer Agreement</b>
-          </h3>
-          <p>
-            <b>The Mortgage Loan Transfer Agreement </b>(this “Agreement”), is
-            made and entered into as of
-            <b>
-              July 31, 2024, by and between Shree, having an address of 6955
-              Union Park Center, Suite 330, Midvale, Utah 84087 (“Seller”), and
-              Dia, a having an address of One Crescent Drive, Suite 203,
-              Philadelphia, PA 19112 or its designee permitted pursuant to
-              Section 2.4 below (“Buyer”).
-            </b>
-          </p>
-        </p>
-        <h4
-          style={{
-            textAlign: "center",
-            marginBottom: "1rem",
-            marginTop: "1rem",
-          }}
-        >
-          RECITALS
-        </h4>
-        <div>
-          A. Seller is the holder of and desires to sell the Loan (as defined in
-          Article 1 below) on the terms and subject to the conditions set forth
-          herein.
-        </div>
-        <div>
-          B. Buyer is a sophisticated and experienced purchaser of commercial
-          real estate and loans secured by real property and desires to purchase
-          the Loan on the terms and subject to the conditions set forth herein.
-          <h4
-            style={{
-              textAlign: "center",
-              marginBottom: "1rem",
-              marginTop: "1rem",
-            }}
-          >
-            AGREEMENT
-          </h4>
-          <b>NOW, THEREFORE,</b> in consideration of the mutual promises herein
-          set forth and other good and valuable consideration, the receipt and
-          sufficiency of which are hereby acknowledged, Seller and Buyer agree
-          as follows:
+                  Mortgage Transfer Agreement
+
+            This Mortgage Transfer Agreement ("Agreement") is made on [Date], by and between:
+
+            [Transferor's Name], of [Transferor's Address] ("Transferor"), and
+
+            [Transferee's Name], of [Transferee's Address] ("Transferee").
+
+            Recitals
+
+            WHEREAS, the Transferor is the holder of a mortgage dated [Original Mortgage Date], in the principal amount of £[Amount], secured by the property located at [Property Address] ("Property").
+            WHEREAS, the Transferor wishes to transfer, and the Transferee wishes to assume, all rights, title, and interest in and to the mortgage.
+            Agreement
+
+            Transfer of Mortgage: The Transferor hereby transfers to the Transferee all rights, title, and interest in and to the mortgage dated [Original Mortgage Date], including all rights to receive payment of principal and interest from [Borrower's Name].
+
+            Effective Date: The transfer shall be effective as of [Effective Date].
+
+            Representations and Warranties:
+
+            The Transferor represents and warrants that they have the authority to transfer the mortgage and that the mortgage is valid and enforceable.
+            The Transferee represents and warrants that they have the authority to assume the mortgage and agree to be bound by its terms.
+            Indemnity: The Transferee agrees to indemnify and hold harmless the Transferor from any liabilities or obligations arising from the mortgage after the Effective Date.
+
+            Governing Law: This Agreement shall be governed by and construed in accordance with the laws of England and Wales.
+
+            Signatures:
+
+            Transferor: ____________________________ Date: ____________
+            Transferee: ____________________________ Date: ____________
+            Witnesses
+
+            Witness: ____________________________ Date: ____________
+            Witness: ____________________________ Date: ____________
+
+       
         </div>
       </div>
-    </div>
+
   );
 };

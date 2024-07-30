@@ -26,11 +26,11 @@ export const PropertyDetails = () => {
   const [isStatusChanged, setIsStatusChanged] = useState<boolean>(false);
   const [loanAmount, setLoanAmount] = useState<number>(outstandingBalance);
   const [quoteMessage, setQuoteMessage] = useState<string>(
-    "Quotation has been sent to lender for review."
+    "Quotation has been sent to Seller for review."
   );
   const sendQuotation = () => {
     timerRef.current = setTimeout(() => {
-      setQuoteMessage("Congratulations lender has accepted your quotation.");
+      setQuoteMessage("Congratulations Seller has accepted your quotation.");
       setIsStatusChanged(true);
     }, 3000);
     setIsSendQuote(true);

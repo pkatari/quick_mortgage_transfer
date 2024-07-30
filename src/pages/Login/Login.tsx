@@ -5,6 +5,7 @@ import "./Login.scss";
 export const Login = () => {
   const navigate = useNavigate();
   const onLogin = () => {
+    sessionStorage.setItem("isLogin", "true");
     navigate("/", {
       state: {
         isLogin: true,
@@ -29,7 +30,6 @@ export const Login = () => {
             placeholder="Password"
           />
           <button>Login</button>
-          <Link to="/newuser">Don't have an account? Sign Up</Link>
         </form>
       </div>
     </div>

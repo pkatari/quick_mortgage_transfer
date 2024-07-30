@@ -3,7 +3,7 @@ import "./Header.scss";
 
 export const Header = ({ isLogin }: any) => {
   const [isSignout, setIsSignout] = useState<boolean>(false);
-  const user = isLogin && !isSignout;
+  const user = (isLogin || sessionStorage.getItem("isLogin") === "true") && !isSignout;
   const onSignout = () => {
     setIsSignout(true);
   };

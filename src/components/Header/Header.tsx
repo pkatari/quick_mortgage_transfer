@@ -18,7 +18,7 @@ export const Header = ({ isLogin }: any) => {
       <div className="right">
         {user ? (
           <div className="user">
-            <span>Welcome, Priyanka</span>
+            <span>Thomas Oliver</span>
             <button
               style={{
                 marginLeft: "2rem",
@@ -33,7 +33,8 @@ export const Header = ({ isLogin }: any) => {
         ) : (
           <>
             <a href="/login">Login</a>
-            <a href="/newuser">New User</a>
+            {/* <a href="/newuser">New User</a>*/}
+
           </>
         )}
       </div>

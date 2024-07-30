@@ -1,0 +1,26 @@
+@import "../../main.scss";
+
+.layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .navbar {
+    background-color: #fcf5f3;;
+  }
+
+  @include lg {
+    max-width: 1280px;
+  }
+
+  @include md {
+    max-width: 768px;
+  }
+
+  @include sm {
+    max-width: 640px;
+  }
+
+  .content {
+    height: calc(100vh - 100px);
+  }
+}

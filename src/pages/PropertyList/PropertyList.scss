@@ -1,0 +1,23 @@
+@import "../../main.scss";
+
+.listPage {
+  display: flex;
+  height: 100%;
+  margin-left:20px;
+  margin-right:20px;
+
+  .listContainer {
+    flex: 3;
+    height: 100%;
+
+    .wrapper{
+      height: 100%;
+      padding-right: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      overflow-y: scroll;
+      padding-bottom: 50px;
+    }
+  }
+}

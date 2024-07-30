@@ -241,7 +241,7 @@ export const PropertyDetails = () => {
                 <button disabled={isSendQuote} onClick={onInterestClick}>Interested</button>
               </div>
               {isSendQuote ? (
-                <div style={{ color: "red", fontSize: "18px" }}>
+                <div style={{marginTop:"10px",color:"#B30000",fontSize:"20px"}}>
                   {quoteMessage}
                 </div>
               ) : null}

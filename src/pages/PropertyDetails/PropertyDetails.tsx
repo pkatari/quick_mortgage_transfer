@@ -233,7 +233,7 @@ export const PropertyDetails = () => {
           ) : (
             <div style={{ marginTop: "10rem" }}>
               <button style={{ marginBottom: "2rem" }}>Seller Contact</button>
-              <button>Buy</button>
+              <button>Interested</button>
             </div>
           )}
         </div>

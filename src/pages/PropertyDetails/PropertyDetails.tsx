@@ -88,8 +88,7 @@ export const PropertyDetails = () => {
               <p className="title">Offer Applicable</p>
               <div className="feature">
                 <div className="featureText">
-                  Congrats you and seller both are Natwest Customers.So, you can
-                  Quickly Transfer existing Mortgage.
+                  Congrats you and seller both are Natwest Customers and are eligible for Quick Mortgage transfer.
                 </div>
               </div>
               <div style={{ display: "flex", justifyContent: "space-between" }}>

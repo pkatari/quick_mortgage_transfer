@@ -29,9 +29,9 @@ export const PropertyContainer = ({ item }: any) => {
           <button
             style={{
               padding: "0.5rem 1rem 0.5rem 1rem",
-              color: "#121212",
-              backgroundColor: "steelblue",
-              fontSize: "16px",
+              color: "#fff",
+              backgroundColor: "#5e10b1",
+              fontSize: "18px",
             }}
           >
             Seller Contact
@@ -40,9 +40,9 @@ export const PropertyContainer = ({ item }: any) => {
             style={{
               marginLeft: "1rem",
               padding: "0.5rem 1rem 0.5rem 1rem",
-              color: "#121212",
-              backgroundColor: "steelblue",
-              fontSize: "16px",
+              color: "#fff",
+              backgroundColor: "#5e10b1",
+              fontSize: "18px",
             }}
           >
             Buy

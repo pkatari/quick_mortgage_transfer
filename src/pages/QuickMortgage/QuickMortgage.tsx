@@ -18,7 +18,7 @@ export const QuickMortgage = () => {
 
   return (
     <div className="quickMortgage">
-      <div className="transferContainer">
+      <div className="transferContainer" role="main">
             <h2 style={{textAlign:"center",color:"#5a287d",marginBottom:"20px"}}>Mortgage Transfer Agreement</h2>
             <div style={{marginTop:"10px"}}>This Mortgage Transfer Agreement ("Agreement") is made on <b>31st July,2024</b> by and between:</div>
             <div style={{marginTop:"10px"}}><b>Mr Jane Diane,</b> of<b> 49 Featherstone Street,London,EC1Y 8SY </b>("Transferor"), and </div>
@@ -49,7 +49,7 @@ export const QuickMortgage = () => {
             <button disabled={!agree || isButtonClicked} className="btn" onClick={btnHandler}>
               Submit
             </button>
-           { isButtonClicked && <div style={{marginTop:"10px",color:"red",fontSize:"20px"}}>{submitMessage}</div> }
+           { isButtonClicked && <div style={{marginTop:"10px",color:"#B30000",fontSize:"20px"}}>{submitMessage}</div> }
           </div>
       </div>
 
